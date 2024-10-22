@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect</title>
+    <link rel="stylesheet" href="/static/css/connect_style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="connect-card">
+        <h1>TCPソケット&暗号化チャット</h1>
+        <form method="post" id="connect-form">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="nickname">ニックネーム</label>
+            <input type="text" id="nickname" name="nickname" required />
+          </div>
+          <div class="form-group">
+            <label for="secret_key">鍵生成用パスフレーズ</label>
+            <input type="password" id="secret_key" name="secret_key" required />
+          </div>
+          <div class="form-group">
+            <label for="ip_address">接続先IP</label>
+            <input type="text" id="ip_address" name="ip_address" required />
+          </div>
+          <div class="form-group">
+            <label for="port">接続先Port</label>
+            <input type="text" id="port" name="port" required />
+          </div>
+          <button type="submit" class="btn">Connect</button>
+        </form>
+        {% if error_message %}
+        <div class="error-message">{{ error_message }}</div>
+        {% endif %}
+      </div>
+    </div>
+    <script src="/static/js/connect.js"></script>
+  </body>
+</html>

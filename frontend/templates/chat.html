@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="/static/css/chat_style.css" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="sidebar">
+        <div class="profile-section">
+          <h2>ユーザー情報</h2>
+          <p>ニックネーム: <span id="user-nickname"></span></p>
+          <p>IP: <span id="user-ip"></span></p>
+          <p>Port: <span id="user-port"></span></p>
+        </div>
+        <div class="chatting-to-section">
+          <h2>接続中ユーザー</h2>
+          <div id="peer-info"></div>
+        </div>
+        <button id="disconnect-button" class="btn btn-danger">
+          Disconnect
+        </button>
+      </div>
+      <div class="chat-main">
+        <div id="chat-messages" class="chat-messages"></div>
+        <div class="chat-input">
+          <input
+            type="text"
+            id="message-input"
+            placeholder="Type your message..."
+          />
+          <button id="send-button" class="btn">Send</button>
+        </div>
+      </div>
+    </div>
+    <script src="/static/js/chat.js"></script>
+  </body>
+</html>
